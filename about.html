@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>About Shine · 飲食詞彙</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Instrument+Sans:wght@500;600&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --paper:#F6EFE2; --paper-deep:#EDE2CD; --ink:#1E1A17; --ink-soft:#4E463F; --rule:#CDBFA6;
+  --red:#C8352B; --red-dark:#A12920;
+  --hanzi:"Noto Serif TC","Songti TC","PMingLiU",serif;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --sans:"Instrument Sans",system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  position:relative; min-height:100vh; overflow-x:hidden;
+  color:var(--ink); font-family:var(--serif); font-size:18px; line-height:1.7;
+  background-color:var(--paper);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .38 0 0 0 0 .28 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.012 .08' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .6 0 0 0 0 .5 0 0 0 0 .35 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E"),
+    repeating-linear-gradient(180deg, transparent 0 58px, rgba(120,95,60,.07) 58px 60px),
+    radial-gradient(ellipse 120% 80% at 50% 40%, var(--paper) 40%, var(--paper-deep) 100%);
+}
+.plum{position:absolute; z-index:0; pointer-events:none; user-select:none; height:auto}
+.plum.left{top:0; left:0; width:min(29vw,420px)}
+.plum.right{bottom:0; right:0; width:min(33vw,470px)}
+
+.page{position:relative; z-index:1; max-width:700px; margin:0 auto; padding:40px 16px 72px}
+.page p, .page h2, .page h3, .lede{text-shadow:0 0 8px var(--paper), 0 0 3px var(--paper), 0 0 1px var(--paper)}
+
+.top{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; margin-bottom:34px}
+.navlinks{display:flex; flex-wrap:wrap; gap:8px}
+.navbtn{
+  font-family:var(--sans); font-size:13px; font-weight:600; letter-spacing:.03em; text-decoration:none;
+  color:var(--ink); background:rgba(246,239,226,.85); border:1.5px solid var(--ink); border-radius:999px; padding:6px 14px;
+}
+.navbtn:hover{background:var(--ink); color:var(--paper)}
+.navbtn:focus-visible, .btn:focus-visible, a:focus-visible{outline:2px solid var(--red); outline-offset:3px}
+
+.title{display:flex; align-items:center; gap:18px; margin:0 0 6px}
+h1{font-family:var(--hanzi); font-weight:900; font-size:clamp(46px,9vw,72px); line-height:1; margin:0; letter-spacing:.06em; text-shadow:0 0 10px var(--paper)}
+.seal{
+  flex-shrink:0; width:54px; height:54px; border-radius:6px; background:var(--red); color:#FBF3E6;
+  display:grid; place-items:center; font-family:var(--hanzi); font-weight:900; font-size:19px; line-height:1.05;
+  transform:rotate(-4deg); text-align:center;
+  box-shadow:inset 0 0 0 3px var(--red), inset 0 0 0 4.5px #FBF3E6;
+}
+.kicker{font-family:var(--sans); font-size:12px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--red); margin:0 0 28px}
+
+.photo{margin:0 0 40px; padding:10px; background:#FFFDF8; border:1px solid var(--rule); box-shadow:0 1px 0 rgba(0,0,0,.04), 0 16px 34px -18px rgba(60,40,20,.45)}
+.photo img{display:block; width:100%; height:auto; aspect-ratio:3/2; object-fit:cover; object-position:50% 35%}
+
+h2{font-family:"Source Serif 4",Georgia,serif; font-weight:600; letter-spacing:-.005em; font-size:clamp(30px,5vw,38px); line-height:1.2; margin:0 0 10px}
+.lede{font-size:clamp(20px,3vw,23px); line-height:1.55; margin:0 0 8px; color:var(--ink)}
+h3{
+  font-family:var(--sans); font-size:12.5px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--red-dark);
+  display:flex; align-items:center; gap:10px; margin:40px 0 10px;
+}
+h3::before{
+  content:""; width:18px; height:18px; flex-shrink:0;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-10 -10 20 20'%3E%3Cg fill='%23C8352B'%3E%3Ccircle cx='0' cy='-5' r='3.6'/%3E%3Ccircle cx='4.8' cy='-1.5' r='3.6'/%3E%3Ccircle cx='3' cy='4' r='3.6'/%3E%3Ccircle cx='-3' cy='4' r='3.6'/%3E%3Ccircle cx='-4.8' cy='-1.5' r='3.6'/%3E%3C/g%3E%3Ccircle r='1.8' fill='%237A1A15'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+p{margin:0 0 16px; max-width:64ch}
+a{color:var(--red-dark); text-decoration-thickness:1px; text-underline-offset:3px}
+a:hover{color:var(--red)}
+
+.btns{display:flex; flex-wrap:wrap; gap:12px; margin:18px 0 6px}
+.btn{
+  font-family:var(--sans); font-size:15px; font-weight:600; text-decoration:none; text-shadow:none;
+  padding:11px 20px; border-radius:4px; border:1.5px solid var(--red); background:var(--red); color:#FFF8EE;
+  box-shadow:0 2px 0 var(--red-dark);
+}
+.btn:hover{background:var(--red-dark); color:#FFF8EE}
+.btn.ink{background:rgba(246,239,226,.85); color:var(--ink); border-color:var(--ink); box-shadow:0 2px 0 var(--ink)}
+.btn.ink:hover{background:var(--ink); color:var(--paper)}
+
+.services{margin-top:44px; padding-top:22px; border-top:1px solid var(--rule)}
+.services p{font-style:italic; color:var(--ink-soft)}
+.services strong{font-style:normal; color:var(--ink)}
+
+@media (max-width:760px){
+  body{font-size:17px}
+  .plum.left{width:78vw; opacity:.38}
+  .plum.right{width:82vw; opacity:.38}
+  .page{padding-top:28px}
+}
+@media (prefers-reduced-motion: reduce){ *{transition:none!important} }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" result="t"/><feDisplacementMap in="SourceGraphic" in2="t" scale="1.6"/></filter>
+</svg>
+<img class="plum left" src="plum-left.png" alt="" width="760" height="862">
+<img class="plum right" src="plum-right.png" alt="" width="760" height="1076">
+
+<main class="page">
+  <div class="top">
+    <nav class="navlinks" aria-label="Site">
+      <a class="navbtn" href="index.html">← Flashcards</a>
+      <a class="navbtn" href="https://shinenanigans.com" target="_blank" rel="noopener">shinenanigans.com ↗</a>
+    </nav>
+  </div>
+
+  <div class="title">
+    <h1>關於我</h1>
+    <span class="seal" aria-hidden="true"><span>飲<br>食</span></span>
+  </div>
+  <p class="kicker">About me · the story behind the flashcards</p>
+
+  <figure class="photo">
+    <img src="about-photo.jpg" alt="Shine smiling over her shoulder in a room of glowing pink and violet hanging lanterns" width="2700" height="1800">
+  </figure>
+
+  <h2>Hi, I’m Shine! Welcome.</h2>
+  <p class="lede">This website is designed for anyone with an appetite for foreign language and looking to learn Traditional Chinese.</p>
+  <p>Food words seemed like an easy gateway to learning how to read a foreign language, given its versatility.</p>
+
+  <h3>Why I built this</h3>
+  <p>Perhaps to clarify, as a Canadian foreigner of Hong Kong descent living in this special administrative region for 6+ years now, I designed and created this website with the goal of brushing up my language skills. My spoken Cantonese and Mandarin are adequate, but in order to reach another level of fluency, I believe that being able to write and read is important.</p>
+  <p>Growing up in Canada, I never learned how to read Chinese, despite being able to speak Cantonese.</p>
+  <p>If you’re looking to pick up another skill, join me on my quest to perfect my Chinese and check out Flashcards!</p>
+  <div class="btns"><a class="btn" href="index.html">Start studying →</a></div>
+
+  <h3>Follow along</h3>
+  <p>Follow along my journey abroad by subscribing to <a href="https://shinenanigans.com" target="_blank" rel="noopener">shinenanigans.com</a> and following me on Instagram. For any feedback, comments, or simply to drop a hello, send me a DM on <a href="https://www.instagram.com/travelshinenanigans/" target="_blank" rel="noopener">@travelshinenanigans</a>.</p>
+  <div class="btns">
+    <a class="btn" href="https://shinenanigans.com" target="_blank" rel="noopener">Check out my travel blog</a>
+    <a class="btn ink" href="https://www.instagram.com/travelshinenanigans/" target="_blank" rel="noopener">Follow me</a>
+  </div>
+
+  <div class="services">
+    <p><strong>Digital marketing &amp; content services.</strong> Offering digital marketing and content services as well. DM me on <a href="https://www.instagram.com/travelshinenanigans/" target="_blank" rel="noopener">Instagram</a> for a quick quote.</p>
+  </div>
+</main>
+</body>
+</html>
