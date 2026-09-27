@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;900&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
+html,body{margin:0}
 :root{
   --bg:#E9F0EC; --surface:#FBFDFB; --ink:#16241F; --muted:#5B6E66; --line:#C9D8D0;
   --tile:#1F3F8F; --accent:#B8322A; --accent-ink:#FFFFFF; --good:#2E7D4F; --again:#B8322A;
@@ -171,6 +172,21 @@ header{
 @media (prefers-reduced-motion: reduce){ h1{animation:none} }
 @media (prefers-reduced-motion: reduce){ .card, .progress i{transition:none} }
 @media (max-width:480px){ .row .lbl{width:100%} .card{aspect-ratio:auto; height:300px} }
+
+/* ---- site nav buttons ---- */
+.navlinks{display:flex; flex-wrap:wrap; gap:8px; width:100%}
+.navbtn{
+  font:inherit; font-size:13px; font-weight:600; letter-spacing:.04em; text-decoration:none;
+  padding:7px 14px; border-radius:999px; color:#FFE6EE; background:rgba(255,59,107,.08);
+  border:1.5px solid var(--neon-pink);
+  box-shadow:0 0 6px rgba(255,59,107,.55), inset 0 0 6px rgba(255,59,107,.25);
+  text-shadow:0 0 6px rgba(255,59,107,.8); transition:background .2s, box-shadow .2s;
+}
+.navbtn.cyan{color:#DDFDFF; border-color:var(--neon-cyan); background:rgba(61,242,255,.06);
+  box-shadow:0 0 6px rgba(61,242,255,.55), inset 0 0 6px rgba(61,242,255,.2); text-shadow:0 0 6px rgba(61,242,255,.8)}
+.navbtn:hover{background:rgba(255,59,107,.2); box-shadow:0 0 12px rgba(255,59,107,.8), inset 0 0 8px rgba(255,59,107,.35)}
+.navbtn.cyan:hover{background:rgba(61,242,255,.16); box-shadow:0 0 12px rgba(61,242,255,.8), inset 0 0 8px rgba(61,242,255,.3)}
+.navbtn:focus-visible{outline:2px solid #fff; outline-offset:2px}
 </style>
 </head>
 <body>
@@ -183,6 +199,10 @@ header{
       <span class="k">Got it <b id="kc">0</b></span>
       <span class="a">Again <b id="ac">0</b></span>
     </div>
+    <nav class="navlinks" aria-label="Site">
+      <a class="navbtn" href="about.html">About me</a>
+      <a class="navbtn cyan" href="https://shinenanigans.com" target="_blank" rel="noopener">shinenanigans.com ↗</a>
+    </nav>
   </header>
 
   <section class="panel" aria-label="Deck settings">
